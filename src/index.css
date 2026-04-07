@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+    color: #2C3E50;
+    background-color: #F7F7F7;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+  }
+  
+  /* Dramatic typography variations */
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  
+  p {
+    margin: 0 0 16px 0;
+  }
+  
+  /* Pull quotes */
+  .pull-quote {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.3;
+    color: #FF6B6B;
+    border-left: 4px solid #FF6B6B;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  /* Callout text */
+  .callout {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-weight: 600;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Last child elements shouldn't have bottom margin */
+  section > *:last-child,
+  .container > *:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .animate-rotate {
+      animation: rotate 3s linear infinite;
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+  /* Calendar Day Hover and Selected States */
+  .calendar-day {
+    transition: all 0.3s ease;
+  }
+
+  .calendar-day:hover:not(:disabled) {
+    background: #f0f0f0 !important;
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  .calendar-day.selected {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%) !important;
+    color: white !important;
+    border-color: #FF6B6B !important;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+  }
+
+  .calendar-day.has-event {
+    position: relative;
+  }
+
+  .calendar-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ECDC4;
+  }
+}
+
+@layer components {
+  /* Global Section Spacing - Consistent padding for all sections */
+  section {
+    padding: 100px 20px;
+    margin: 0;
+  }
+  
+  /* Specific section overrides */
+  .hero-section {
+    padding-top: 20px !important; /* Minimal top padding since navbar overlaps */
+    padding-bottom: 100px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-bottom: 0;
+  }
+  
+  .real-numbers-section {
+    padding: 100px 20px !important;
+  }
+  
+  .mission-section {
+    padding: 100px 20px !important;
+  }
+  
+  .impact-section {
+    padding: 100px 20px !important;
+  }
+  
+  .why-serve-section {
+    padding: 100px 20px !important;
+  }
+  
+  .volunteer-section {
+    padding: 100px 20px !important;
+  }
+  
+  .alumni-section {
+    padding: 100px 20px !important;
+  }
+  
+  .stories-section {
+    padding: 100px 20px !important;
+  }
+  
+  .faq-section {
+    padding: 100px 20px !important;
+  }
+  
+  .pre-footer-cta {
+    padding: 120px 20px !important; /* Extra padding for emphasis */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  footer {
+    padding: 60px 20px 40px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    section {
+      padding: 60px 20px !important;
+    }
+    
+    .hero-section {
+      padding-top: 20px !important;
+      padding-bottom: 60px !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+    
+    .pre-footer-cta {
+      padding: 80px 20px !important;
+    }
+  }
+}
+

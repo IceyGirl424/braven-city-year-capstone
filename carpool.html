@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the City Year Bay Area Carpool Program. Connect with members, save money, reduce your carbon footprint, and build community.">
+    <meta name="keywords" content="City Year, carpool, Bay Area, volunteer, community, transportation">
+    <meta property="og:title" content="City Year Carpool Program - City Year Bay Area">
+    <meta property="og:description" content="Connecting members. Reducing barriers. Building community.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cityyearbayarea.org/carpool.html">
+    <title>City Year Carpool Program - City Year Bay Area</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: #2C3E50;
+            background-color: #F7F7F7;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        :root {
+            --primary: #FF6B6B;
+            --primary-dark: #FF8E53;
+            --secondary: #FFD93D;
+            --accent: #4ECDC4;
+            --neutral-light: #F7F7F7;
+            --neutral-dark: #2C3E50;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 80px;
+            padding: 0 1rem 1rem 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .nav-container {
+                padding: 0 1.5rem 1rem 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-container {
+                padding: 0 2rem 1rem 2rem;
+            }
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--neutral-dark);
+            font-weight: 700;
+            font-size: 1.25rem;
+            transition: opacity 0.3s;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: -24px;
+        }
+        
+        @media (min-width: 768px) {
+            .logo-wrapper {
+                margin-bottom: -40px;
+            }
+        }
+        
+        .logo-svg {
+            width: 80px;
+            height: 80px;
+            overflow: visible;
+            display: block;
+        }
+        
+        .logo-svg text {
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+        
+        @media (min-width: 768px) {
+            .logo-svg {
+                width: 112px;
+                height: 112px;
+                overflow: visible;
+            }
+        }
+        
+        .logo-wrapper {
+            overflow: visible;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.9375rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links .btn-donate {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .nav-links .btn-donate:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 0.375rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 1.5rem;
+            height: 0.125rem;
+            background: #374151;
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(0.5rem);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-0.5rem);
+        }
+        
+        .mobile-menu {
+            display: none;
+            padding: 1rem 0;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu a,
+        .mobile-menu button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu a:hover,
+        .mobile-menu button:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu .btn-donate {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        
+        .mobile-menu .btn-donate:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            margin-top: -24px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero {
+                margin-top: -40px;
+            }
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1543269664-7eef42226a21?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: transparent;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+            min-height: 44px;
+            min-width: 180px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--neutral-dark);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--neutral-dark);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Fade in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 3-Column Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--neutral-dark);
+        }
+        
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* How It Works */
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+        }
+        
+        .step h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--neutral-dark);
+        }
+        
+        .form-group input,
+        .form-group select {
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            min-height: 44px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-group input.valid {
+            border-color: var(--accent);
+        }
+        
+        .form-group input.invalid {
+            border-color: #ef4444;
+        }
+        
+        .form-group .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .form-group input.invalid + .error-message {
+            display: block;
+        }
+        
+        .toggle-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .toggle-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 0.5rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            min-height: 44px;
+        }
+        
+        .toggle-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .form-progress {
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .form-progress-bar {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            transition: width 0.3s;
+            width: 0%;
+        }
+        
+        .form-status-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .form-status-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .form-status-link a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Stats Counter */
+        .stats-counter {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .stats-counter::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 217, 61, 0.75) 0%, rgba(255, 199, 0, 0.8) 100%);
+            z-index: 1;
+        }
+        
+        .stats-counter .number,
+        .stats-counter .label {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stats-counter .number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--neutral-dark);
+        }
+        
+        .stats-counter .label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--neutral-dark);
+            opacity: 0.8;
+        }
+        
+        /* Cost Calculator */
+        .calculator {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .calculator-result {
+            background: linear-gradient(135deg, var(--accent) 0%, #45B8B0 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        .calculator-result .amount {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+        
+        /* Map Container */
+        .map-container {
+            height: 400px;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            overflow: hidden;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Testimonials */
+        .testimonial-carousel {
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            background: var(--neutral-light);
+            padding: 2rem;
+            min-height: 150px;
+        }
+        
+        .testimonial {
+            text-align: center;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .testimonial p {
+            font-size: 1.125rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--neutral-dark);
+        }
+        
+        .testimonial .author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #9CA3AF;
+            padding: 60px 20px 40px;
+            margin-top: 0;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo-text h4 {
+            color: white;
+            margin: 0;
+        }
+        
+        .footer-logo-text p {
+            color: #9CA3AF;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        
+        .footer-bottom p {
+            font-size: 0.875rem;
+            color: #6B7280;
+        }
+        
+        .footer-bottom a {
+            color: #9CA3AF;
+            text-decoration: underline;
+        }
+        
+        .footer-bottom a:hover {
+            color: white;
+        }
+        
+        /* Partner Logos */
+        .partner-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            opacity: 0.7;
+        }
+        
+        .partner-logo {
+            height: 40px;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .steps {
+                flex-direction: column;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo-wrapper">
+                    <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="#FFD166" />
+                        <circle cx="100" cy="100" r="85" fill="white" />
+                        <g transform="translate(100, 100)">
+                            <g>
+                                <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                            </g>
+                            <g transform="rotate(90)">
+                                <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                            </g>
+                            <g transform="rotate(180)">
+                                <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                            </g>
+                            <g transform="rotate(270)">
+                                <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                            </g>
+                        </g>
+                        <circle cx="100" cy="100" r="25" fill="#E63946" />
+                        <text x="100" y="108" text-anchor="middle" fill="black" font-size="18" font-weight="bold" font-family="Arial, sans-serif" letter-spacing="3">CITY YEAR</text>
+                    </svg>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#perks">Benefits</a></li>
+                <li><a href="index.html#calendar">Volunteer</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="carpool.html">Carpool</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#donate" class="btn-donate">Donate</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#perks">Benefits</a>
+            <a href="index.html#calendar">Volunteer</a>
+            <a href="index.html#stories">Stories</a>
+            <a href="carpool.html">Carpool</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#donate" class="btn-donate">Donate</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>City Year Carpool Program</h1>
+            <p>Connecting members. Reducing barriers. Building community.</p>
+            <a href="#signup" class="btn-primary">Join the Carpool Network</a>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section>
+        <h2 class="section-title fade-in">Why Carpool with City Year?</h2>
+        <p class="section-subtitle fade-in">A program designed to support our community while making a positive impact</p>
+        
+        <div class="grid-3">
+            <div class="card fade-in">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path>
+                        <polygon points="12 15 17 21 7 21 12 15"></polygon>
+                    </svg>
+                </div>
+                <h3>For Members</h3>
+                <ul>
+                    <li>Save money on gas and parking</li>
+                    <li>Build connections with fellow members</li>
+                    <li>Reduce commute stress</li>
+                    <li>Flexible scheduling options</li>
+                </ul>
+            </div>
+            
+            <div class="card fade-in">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3>For Volunteers</h3>
+                <ul>
+                    <li>Reserved parking at events</li>
+                    <li>Exclusive event access</li>
+                    <li>Community impact recognition</li>
+                    <li>Priority matching system</li>
+                </ul>
+            </div>
+            
+            <div class="card fade-in">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <h3>Environmental Impact</h3>
+                <ul>
+                    <li>Reduce carbon footprint</li>
+                    <li>Less traffic congestion</li>
+                    <li>Support sustainable practices</li>
+                    <li>Community environmental goals</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section style="background: var(--neutral-light);">
+        <h2 class="section-title fade-in">How It Works</h2>
+        <p class="section-subtitle fade-in">Get started in three simple steps</p>
+        
+        <div class="steps">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <h4>Sign Up</h4>
+                <p>Fill out the form below with your zip code and preferences</p>
+            </div>
+            
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <h4>Get Matched</h4>
+                <p>Our system connects you with nearby members or volunteers</p>
+            </div>
+            
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <h4>Start Carpooling</h4>
+                <p>Coordinate schedules and start saving together</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Sign-Up Section -->
+    <section id="signup">
+        <h2 class="section-title fade-in">Join the Carpool Network</h2>
+        <p class="section-subtitle fade-in">Find your perfect carpool match today</p>
+        
+        <!-- Live Counter -->
+        <div class="stats-counter fade-in">
+            <div class="number" id="carpoolCount">23</div>
+            <div class="label">Active Carpools This Month</div>
+        </div>
+        
+        <!-- Cost Savings Calculator -->
+        <div class="calculator fade-in">
+            <h3 style="margin-bottom: 1rem;">Calculate Your Savings</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Miles per Week</label>
+                    <input type="number" id="milesPerWeek" value="100" min="0" step="1">
+                </div>
+                <div class="form-group">
+                    <label>Gas Price ($/gallon)</label>
+                    <input type="number" id="gasPrice" value="5.00" step="0.01" min="0">
+                </div>
+            </div>
+            <div class="calculator-result">
+                <div>Estimated Monthly Savings</div>
+                <div class="amount" id="savingsAmount">$0</div>
+            </div>
+        </div>
+        
+        <!-- Sign-Up Form -->
+        <div class="form-section fade-in">
+            <h3 style="margin-bottom: 1.5rem; text-align: center;">Sign Up Form</h3>
+            
+            <!-- Progress Bar -->
+            <div class="form-progress">
+                <div class="form-progress-bar" id="formProgress"></div>
+            </div>
+            
+            <form id="carpoolForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="fullName" required>
+                        <span class="error-message">Please enter your full name</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" id="email" required>
+                        <span class="error-message">Please enter a valid email address</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="phone" required pattern="[0-9]{10}">
+                        <span class="error-message">Please enter a valid 10-digit phone number</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Zip Code *</label>
+                        <input type="text" id="zipCode" pattern="[0-9]{5}" required>
+                        <span class="error-message">Please enter a valid 5-digit zip code</span>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>I am a:</label>
+                        <div class="toggle-group">
+                            <button type="button" class="toggle-btn active" data-role="driver">Driver</button>
+                            <button type="button" class="toggle-btn" data-role="rider">Rider</button>
+                            <button type="button" class="toggle-btn" data-role="both">Both</button>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Preferred Carpool Times (select all that apply)</label>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" name="times" value="morning" style="width: 20px; height: 20px; cursor: pointer;">
+                                <span>Morning (6-9 AM)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" name="times" value="midday" style="width: 20px; height: 20px; cursor: pointer;">
+                                <span>Midday (9 AM - 2 PM)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" name="times" value="afternoon" style="width: 20px; height: 20px; cursor: pointer;">
+                                <span>Afternoon (2-6 PM)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" name="times" value="evening" style="width: 20px; height: 20px; cursor: pointer;">
+                                <span>Evening (6-9 PM)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">
+                    Submit Application
+                </button>
+                <div class="form-status-link">
+                    <a href="#status">Already registered? Check your status</a>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Interactive Map -->
+        <div class="map-container fade-in" id="mapContainer" style="display: none;">
+            <div id="mapPlaceholder" style="display: flex; align-items: center; justify-content: center; height: 100%; background: var(--neutral-light); color: var(--neutral-dark);">
+                <div style="text-align: center; padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Carpool Zones Map</h3>
+                    <p>Enter your zip code above to see available matches in your area</p>
+                    <div id="mapResults" style="margin-top: 1rem; font-weight: 600; color: var(--primary);"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Success Stories Carousel -->
+        <div class="testimonial-carousel fade-in">
+            <div class="testimonial active">
+                <p>"The carpool program has saved me over $200 a month! Plus, I've made amazing friends with my carpool buddies."</p>
+                <div class="author">— Sarah M., City Year Member</div>
+            </div>
+            <div class="testimonial">
+                <p>"As a volunteer driver, I love being part of the City Year community. It's rewarding to help members get to their service sites."</p>
+                <div class="author">— Michael T., Volunteer Driver</div>
+            </div>
+            <div class="testimonial">
+                <p>"Carpooling has made my commute so much easier. I look forward to the conversations we have on the way to work!"</p>
+                <div class="author">— Jessica L., City Year Member</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Impact Stats -->
+    <section style="position: relative; color: white; overflow: hidden;">
+        <!-- Background Image with Overlay -->
+        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0.4;"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30, 60, 80, 0.75) 0%, rgba(20, 50, 70, 0.8) 100%);"></div>
+        
+        <!-- Content -->
+        <div style="position: relative; z-index: 10;">
+            <h2 class="section-title" style="color: white;">Environmental Impact</h2>
+            <div class="grid-3" style="margin-top: 2rem;">
+                <div style="text-align: center;" class="fade-in">
+                    <div style="font-size: 3rem; font-weight: 900; margin-bottom: 0.5rem;" id="co2Reduced">0</div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">Pounds of CO₂ Reduced</div>
+                </div>
+                <div style="text-align: center;" class="fade-in">
+                    <div style="font-size: 3rem; font-weight: 900; margin-bottom: 0.5rem;" id="milesSaved">0</div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">Miles Saved</div>
+                </div>
+                <div style="text-align: center;" class="fade-in">
+                    <div style="font-size: 3rem; font-weight: 900; margin-bottom: 0.5rem;" id="gallonsSaved">0</div>
+                    <div style="font-size: 1.25rem; font-weight: 600;">Gallons of Gas Saved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Footer -->
+    <section style="background: var(--neutral-light);">
+        <h2 class="section-title fade-in">Ready to Join?</h2>
+        <p class="section-subtitle fade-in">Start your carpool journey today and make a difference</p>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="#signup" class="btn-primary">Sign Up Now</a>
+        </div>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+            <h3 style="margin-bottom: 1.5rem;">Questions?</h3>
+            <p style="margin-bottom: 1rem;">
+                <strong>Email:</strong> <a href="mailto:carpool@cityyear.org" style="color: var(--primary);">carpool@cityyear.org</a>
+            </p>
+            <p style="margin-bottom: 2rem;">
+                <strong>Phone:</strong> <a href="tel:+14155551234" style="color: var(--primary);">(415) 555-1234</a>
+            </p>
+            <a href="index.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+                ← Back to Engagement Hub
+            </a>
+        </div>
+        
+        <!-- Partner School Logos -->
+        <div class="partner-logos fade-in">
+            <div style="font-weight: 600; color: var(--neutral-dark); width: 100%; text-align: center; margin-bottom: 1rem;">Partner Schools</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; width: 100%;">
+                <div style="padding: 1rem; background: white; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">Eastside San José Elementary</div>
+                <div style="padding: 1rem; background: white; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">East Palo Alto Middle School</div>
+                <div style="padding: 1rem; background: white; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">San José High School</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="95" fill="#FFD166" />
+                            <circle cx="100" cy="100" r="85" fill="white" />
+                            <g transform="translate(100, 100)">
+                                <g>
+                                    <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                    <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                    <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                    <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                    <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                                </g>
+                                <g transform="rotate(90)">
+                                    <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                    <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                    <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                    <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                    <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                                </g>
+                                <g transform="rotate(180)">
+                                    <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                    <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                    <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                    <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                    <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                                </g>
+                                <g transform="rotate(270)">
+                                    <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                    <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                    <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                    <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                    <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                                </g>
+                            </g>
+                            <circle cx="100" cy="100" r="25" fill="#E63946" />
+                            <text x="100" y="108" textAnchor="middle" fill="black" fontSize="18" fontWeight="bold" fontFamily="Arial, sans-serif" letterSpacing="3">CITY YEAR</text>
+                        </svg>
+                        <div class="footer-logo-text">
+                            <h4>City Year</h4>
+                            <p>Bay Area</p>
+                        </div>
+                    </div>
+                    <p>Supporting students in San José and East Palo Alto</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="https://instagram.com/cityyearsj.sv" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://facebook.com/cityyear" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://twitter.com/cityyear" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html#apply">Apply Now</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Carpool</h4>
+                    <ul>
+                        <li><a href="carpool.html#signup">Join the Network</a></li>
+                        <li><a href="carpool.html#signup">Sign Up</a></li>
+                        <li><a href="carpool.html">Learn More</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support Us</h4>
+                    <p style="margin-bottom: 1rem; font-size: 0.875rem;">
+                        Your donation helps us provide critical support to students in Eastside San José and East Palo Alto.
+                    </p>
+                    <a href="index.html#donate" style="display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: background 0.3s;">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    <p style="margin-bottom: 0.5rem;">
+                        © 2024 Copyright City Year at 287 Columbus Avenue, Boston, MA 02116
+                    </p>
+                    <p>
+                        <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+                <div>
+                    <div style="background-color: #f3f4f6; border-radius: 0.25rem; padding: 0.375rem 0.5rem; display: inline-block;">
+                        <img src="/AC_State-Logo_CA.png" alt="AmeriCorps California" style="height: 40px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #374151;">
+                <p style="font-size: 0.75rem; line-height: 1.6; text-align: center;">
+                    City Year is available to all, without regard to race, color, origin, gender, political affiliation, 
+                    disability, sexual orientation, or religion. City Year is a US tax-exempt 501(c)(3) nonprofit organization 
+                    (Tax ID Number: 22-2882549). Your gift is tax-deductible as allowed by law.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            fadeObserver.observe(el);
+        });
+
+        // Toggle buttons
+        let selectedRole = 'driver';
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                selectedRole = this.dataset.role;
+            });
+        });
+
+        // Real-time Cost Savings Calculator
+        function calculateSavings() {
+            const miles = parseFloat(document.getElementById('milesPerWeek').value) || 0;
+            const gasPrice = parseFloat(document.getElementById('gasPrice').value) || 0;
+            const mpg = 25;
+            const weeksPerMonth = 4.33;
+            
+            const gallonsPerWeek = miles / mpg;
+            const costPerWeek = gallonsPerWeek * gasPrice;
+            const monthlyCost = costPerWeek * weeksPerMonth;
+            const savings = monthlyCost * 0.5;
+            
+            document.getElementById('savingsAmount').textContent = '$' + savings.toFixed(2);
+        }
+
+        document.getElementById('milesPerWeek').addEventListener('input', calculateSavings);
+        document.getElementById('gasPrice').addEventListener('input', calculateSavings);
+        calculateSavings();
+
+        // Form Validation
+        const form = document.getElementById('carpoolForm');
+        const inputs = form.querySelectorAll('input[required]');
+        
+        function validateField(input) {
+            const value = input.value.trim();
+            let isValid = true;
+            
+            if (input.type === 'email') {
+                isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            } else if (input.type === 'tel') {
+                isValid = /^[0-9]{10}$/.test(value.replace(/\D/g, ''));
+            } else if (input.pattern) {
+                const regex = new RegExp(input.pattern);
+                isValid = regex.test(value);
+            } else {
+                isValid = value.length > 0;
+            }
+            
+            if (isValid) {
+                input.classList.remove('invalid');
+                input.classList.add('valid');
+            } else {
+                input.classList.remove('valid');
+                input.classList.add('invalid');
+            }
+            
+            updateFormProgress();
+            return isValid;
+        }
+        
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => validateField(input));
+            input.addEventListener('input', () => {
+                if (input.classList.contains('invalid')) {
+                    validateField(input);
+                }
+            });
+        });
+        
+        // Form Progress Indicator
+        function updateFormProgress() {
+            const totalFields = inputs.length;
+            let filledFields = 0;
+            
+            inputs.forEach(input => {
+                if (input.value.trim() && !input.classList.contains('invalid')) {
+                    filledFields++;
+                }
+            });
+            
+            const progress = (filledFields / totalFields) * 100;
+            document.getElementById('formProgress').style.width = progress + '%';
+        }
+        
+        // Form Submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+            
+            if (isValid) {
+                alert('Thank you for signing up! We\'ll contact you soon with carpool matches.');
+                form.reset();
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.toggle-btn[data-role="driver"]').classList.add('active');
+                updateFormProgress();
+            } else {
+                alert('Please fill in all required fields correctly.');
+            }
+        });
+
+        // Zip Code Matcher with Map
+        const zipCodeMatches = {
+            '94025': { matches: ['94024', '94301', '94303'], lat: 37.4419, lng: -122.1430 },
+            '94301': { matches: ['94025', '94024', '94303'], lat: 37.4419, lng: -122.1430 },
+            '95110': { matches: ['95112', '95116', '95122'], lat: 37.3382, lng: -121.8863 },
+            '95112': { matches: ['95110', '95116', '95122'], lat: 37.3382, lng: -121.8863 }
+        };
+
+        document.getElementById('zipCode').addEventListener('input', function() {
+            const zip = this.value;
+            const mapContainer = document.getElementById('mapContainer');
+            const mapResults = document.getElementById('mapResults');
+            const mapPlaceholder = document.getElementById('mapPlaceholder');
+            
+            if (zip.length === 5 && zipCodeMatches[zip]) {
+                const data = zipCodeMatches[zip];
+                mapResults.innerHTML = `Found ${data.matches.length} potential matches in nearby zip codes: ${data.matches.join(', ')}`;
+                
+                // Show map container
+                mapContainer.style.display = 'block';
+                mapPlaceholder.style.display = 'flex';
+                
+                // Create a simple visual map representation
+                mapPlaceholder.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--primary);">Carpool Zone: ${zip}</h3>
+                        <p style="margin-bottom: 1rem;">Found ${data.matches.length} potential matches in nearby zip codes:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                            ${data.matches.map(m => `<span style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600;">${m}</span>`).join('')}
+                        </div>
+                        <p style="color: var(--neutral-dark); opacity: 0.8;">We'll connect you with members in these areas!</p>
+                    </div>
+                `;
+                
+                // Scroll to map
+                setTimeout(() => {
+                    mapContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            } else if (zip.length === 5) {
+                mapContainer.style.display = 'block';
+                mapPlaceholder.style.display = 'flex';
+                mapPlaceholder.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <h3 style="margin-bottom: 1rem;">Carpool Zones Map</h3>
+                        <p>Entering your zip code... We'll match you with nearby members!</p>
+                        <div id="mapResults" style="margin-top: 1rem; font-weight: 600; color: var(--primary);"></div>
+                    </div>
+                `;
+            } else {
+                mapContainer.style.display = 'none';
+            }
+        });
+
+        // Testimonial Carousel
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        
+        function rotateTestimonials() {
+            testimonials[currentTestimonial].classList.remove('active');
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            testimonials[currentTestimonial].classList.add('active');
+        }
+        
+        setInterval(rotateTestimonials, 5000);
+
+        // Animated Statistics
+        function animateCounter(elementId, target, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for stats animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('co2Reduced', 1247);
+                    animateCounter('milesSaved', 8934);
+                    animateCounter('gallonsSaved', 342);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.getElementById('co2Reduced');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize form progress
+        updateFormProgress();
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

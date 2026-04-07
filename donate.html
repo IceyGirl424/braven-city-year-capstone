@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support City Year Bay Area. Your donation directly supports 1,200+ students in East San José and East Palo Alto.">
+    <meta name="keywords" content="City Year, donate, Bay Area, education, students, nonprofit">
+    <meta property="og:title" content="Invest in Tomorrow's Leaders - City Year Bay Area">
+    <meta property="og:description" content="Your donation directly supports 1,200+ Bay Area students">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cityyearbayarea.org/donate.html">
+    <title>Invest in Tomorrow's Leaders - City Year Bay Area</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: #2C3E50;
+            background-color: #F7F7F7;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        :root {
+            --primary: #FF6B6B;
+            --primary-dark: #FF8E53;
+            --secondary: #FFD93D;
+            --accent: #4ECDC4;
+            --neutral-light: #F7F7F7;
+            --neutral-dark: #2C3E50;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 80px;
+            padding: 0 1rem 1rem 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .nav-container {
+                padding: 0 1.5rem 1rem 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-container {
+                padding: 0 2rem 1rem 2rem;
+            }
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--neutral-dark);
+            font-weight: 700;
+            font-size: 1.25rem;
+            transition: opacity 0.3s;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: -24px;
+        }
+        
+        @media (min-width: 768px) {
+            .logo-wrapper {
+                margin-bottom: -40px;
+            }
+        }
+        
+        .logo-svg {
+            width: 80px;
+            height: 80px;
+            overflow: visible;
+            display: block;
+        }
+        
+        @media (min-width: 768px) {
+            .logo-svg {
+                width: 112px;
+                height: 112px;
+            }
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.9375rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links .btn-donate {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .nav-links .btn-donate:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 0.375rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 1.5rem;
+            height: 0.125rem;
+            background: #374151;
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            padding: 1rem 0;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            margin-top: -24px;
+            padding: 120px 20px 80px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero {
+                margin-top: -40px;
+                padding: 140px 20px 100px;
+            }
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.9) 0%, rgba(255, 142, 83, 0.9) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+        
+        .student-counter {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 1rem 0;
+        }
+        
+        .student-rotator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .student-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .student-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .donor-count {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+        
+        /* Visual Impact for Amounts */
+        .amount-visual {
+            min-height: 200px;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--neutral-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .student-faces {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem;
+        }
+        
+        .student-face {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+        
+        .books-animation {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-end;
+        }
+        
+        .book {
+            width: 40px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 4px;
+            animation: stack 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes stack {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        
+        .classroom-scene {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+        
+        /* Real-Time Impact */
+        .impact-visualization {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .impact-counter {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .classroom-transformation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .classroom-state {
+            text-align: center;
+        }
+        
+        .classroom-state img {
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+        
+        .donor-avatars {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .donor-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+        
+        /* Where Your Money Goes */
+        .money-breakdown {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .pie-chart-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 2rem auto;
+        }
+        
+        .pie-segment {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .pie-segment:hover {
+            transform: scale(1.05);
+        }
+        
+        .breakdown-details {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .breakdown-item {
+            padding: 1rem;
+            border-left: 4px solid var(--primary);
+            background: var(--neutral-light);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .breakdown-item:hover {
+            background: #E5E7EB;
+            transform: translateX(5px);
+        }
+        
+        /* Donor Recognition */
+        .donor-wall {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .recent-donors {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scroll-behavior: smooth;
+        }
+        
+        .donor-card {
+            min-width: 150px;
+            padding: 1rem;
+            background: var(--neutral-light);
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+        
+        .donor-name {
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .donor-amount {
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 0.25rem;
+        }
+        
+        .impact-level {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+        
+        .impact-level.supporter {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .impact-level.champion {
+            background: var(--secondary);
+            color: var(--neutral-dark);
+        }
+        
+        .impact-level.leader {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+        
+        /* Urgency Elements */
+        .urgency-banner {
+            background: linear-gradient(135deg, var(--secondary) 0%, #FFC700 100%);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .matching-challenge {
+            background: linear-gradient(135deg, var(--accent) 0%, #45B8B0 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        /* Success Confirmation */
+        .success-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .success-modal.active {
+            display: flex;
+        }
+        
+        .success-content {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .certificate {
+            border: 4px solid var(--primary);
+            padding: 2rem;
+            margin: 2rem 0;
+            background: white;
+        }
+        
+        /* Mobile Payment Buttons */
+        .mobile-payment {
+            display: none;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-payment {
+                display: flex;
+            }
+        }
+        
+        .payment-button {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 0.75rem;
+            background: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-button:hover {
+            border-color: var(--primary);
+            background: var(--neutral-light);
+        }
+        
+        /* Recurring Donation */
+        .sustaining-member {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(78, 205, 196, 0.05) 100%);
+            border: 2px solid var(--accent);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .cumulative-impact {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        /* Trust Badges */
+        .trust-ratings {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .rating-badge {
+            text-align: center;
+        }
+        
+        .rating-stars {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        
+        /* Progress Indicator */
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+        }
+        
+        .progress-step.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .progress-step.completed {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .progress-step.inactive {
+            background: #E5E7EB;
+            color: #6B7280;
+        }
+        
+        /* Donation Amount Section */
+        .donation-amounts {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .donation-amounts h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--neutral-dark);
+        }
+        
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .amount-btn {
+            padding: 1.25rem 1.5rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 0.75rem;
+            background: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--neutral-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .amount-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+        }
+        
+        .amount-btn.selected {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(255, 107, 107, 0.3);
+        }
+        
+        .amount-btn.popular {
+            position: relative;
+        }
+        
+        .amount-btn.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--secondary);
+            color: var(--neutral-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .custom-amount {
+            margin-top: 1rem;
+        }
+        
+        .custom-amount input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .custom-amount input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .impact-message {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: var(--accent);
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(78, 205, 196, 0.05) 100%);
+            border-left: 4px solid var(--accent);
+            border-radius: 0.5rem;
+            font-weight: 600;
+            color: var(--neutral-dark);
+        }
+        
+        /* Donation Form */
+        .donation-form {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--neutral-dark);
+            font-size: 0.875rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            padding: 0.875rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-group input.error {
+            border-color: #EF4444;
+        }
+        
+        .error-message {
+            color: #EF4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        
+        .payment-toggle {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .payment-option {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            border-color: var(--primary);
+        }
+        
+        .payment-option.selected {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 1.25rem;
+            height: 1.25rem;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label {
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Impact Showcase */
+        .impact-showcase {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .impact-showcase h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--neutral-dark);
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .impact-stat {
+            text-align: center;
+        }
+        
+        .impact-stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-stat-label {
+            font-weight: 600;
+            color: var(--neutral-dark);
+        }
+        
+        .progress-bar-container {
+            margin: 2rem 0;
+        }
+        
+        .progress-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .progress-bar {
+            height: 1.5rem;
+            background: #E5E7EB;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        
+        .testimonial {
+            background: var(--neutral-light);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--accent);
+            margin-top: 2rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--neutral-dark);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--neutral-dark);
+        }
+        
+        /* Trust Indicators */
+        .trust-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            padding: 1rem 2rem;
+            background: var(--neutral-light);
+            border-radius: 0.75rem;
+            font-weight: 600;
+            color: var(--neutral-dark);
+        }
+        
+        .trust-section p {
+            color: #6B7280;
+            margin: 1rem 0;
+        }
+        
+        .trust-section a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .trust-section a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #9CA3AF;
+            padding: 60px 20px 40px;
+            margin-top: 4rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo-wrapper">
+                    <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="#FFD166" />
+                        <circle cx="100" cy="100" r="85" fill="white" />
+                        <g transform="translate(100, 100)">
+                            <g>
+                                <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                            </g>
+                            <g transform="rotate(90)">
+                                <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                            </g>
+                            <g transform="rotate(180)">
+                                <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                            </g>
+                            <g transform="rotate(270)">
+                                <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                            </g>
+                        </g>
+                        <circle cx="100" cy="100" r="25" fill="#E63946" />
+                        <text x="100" y="108" text-anchor="middle" fill="black" font-size="18" font-weight="bold" font-family="Arial, sans-serif" letter-spacing="3">CITY YEAR</text>
+                    </svg>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#perks">Benefits</a></li>
+                <li><a href="index.html#calendar">Volunteer</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="carpool.html">Carpool</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="donate.html" class="btn-donate">Donate</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#perks">Benefits</a>
+            <a href="index.html#calendar">Volunteer</a>
+            <a href="index.html#stories">Stories</a>
+            <a href="carpool.html">Carpool</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="donate.html" class="btn-donate">Donate</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content fade-in">
+            <h1>Invest in Tomorrow's Leaders</h1>
+            <p>Your donation will help <span id="studentName">Maria</span> this week</p>
+            <div class="student-counter">
+                <span id="liveStudentCount">1,200</span>+ students
+            </div>
+            <div class="student-rotator">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="Student" class="student-photo" id="rotatingStudentPhoto">
+                    <div class="student-name" id="rotatingStudentName">Maria R.</div>
+                </div>
+            </div>
+            <div class="donor-count">Join <span id="donorCountHero">247</span> donors who've changed a life this month</div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Progress Indicator -->
+        <div class="progress-steps">
+            <div class="progress-step active" id="step1">
+                <span>1</span>
+                <span>Amount</span>
+            </div>
+            <div class="progress-step inactive" id="step2">
+                <span>2</span>
+                <span>Details</span>
+            </div>
+            <div class="progress-step inactive" id="step3">
+                <span>3</span>
+                <span>Payment</span>
+            </div>
+            <div class="progress-step inactive" id="step4">
+                <span>4</span>
+                <span>Confirmation</span>
+            </div>
+        </div>
+
+        <div class="form-grid" style="grid-template-columns: 2fr 1fr; gap: 2rem;">
+            <!-- Left Column: Donation Form -->
+            <div>
+                <!-- Donation Amount Section -->
+                <div class="donation-amounts fade-in">
+                    <h2>Select Your Donation Amount</h2>
+                    <div class="amount-grid">
+                        <button class="amount-btn" data-amount="25" data-impact="School supplies for 5 students">$25</button>
+                        <button class="amount-btn" data-amount="50" data-impact="One week of tutoring materials">$50</button>
+                        <button class="amount-btn popular selected" data-amount="100" data-impact="Professional development for a member">$100</button>
+                        <button class="amount-btn" data-amount="250" data-impact="Support for 10 students for a month">$250</button>
+                        <button class="amount-btn" data-amount="500" data-impact="Full scholarship support for one student">$500</button>
+                        <button class="amount-btn" data-amount="custom" id="customBtn">Custom</button>
+                    </div>
+                    <div class="custom-amount" id="customAmount" style="display: none;">
+                        <input type="number" id="customInput" placeholder="Enter amount" min="1">
+                    </div>
+                    <div class="impact-message" id="impactMessage">
+                        <strong>$100 = </strong>Professional development for a member
+                    </div>
+                    <!-- Visual Impact for Selected Amount -->
+                    <div class="amount-visual" id="amountVisual">
+                        <div class="member-photo-container">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="City Year Member" class="member-photo" id="memberPhoto">
+                            <p style="margin-top: 1rem; font-weight: 600;">Professional training for <span id="memberName">Sarah M.</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Real-Time Impact Visualization -->
+                <div class="impact-visualization fade-in" id="impactVisualization" style="display: none;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: var(--neutral-dark);">Your Impact</h2>
+                    <div class="impact-counter">
+                        You'll impact <span id="studentsImpacted">0</span> students
+                    </div>
+                    <div class="classroom-transformation">
+                        <div class="classroom-state">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop" alt="Empty classroom">
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Before</p>
+                        </div>
+                        <div class="classroom-state">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=300&fit=crop" alt="Engaged classroom">
+                            <p style="margin-top: 0.5rem; font-weight: 600;">After Your Donation</p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">You'll be donor #<span id="nextDonorNumber">248</span> this month</p>
+                        <div class="donor-avatars">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Donor" class="donor-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Donor" class="donor-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Donor" class="donor-avatar">
+                            <span style="margin-left: 0.5rem; font-weight: 600;">+ You</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Urgency Elements -->
+                <div class="urgency-banner fade-in">
+                    <p>⏰ 3 students waiting for tutoring support this week</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.875rem;">Help us reach our November goal - <strong>5 days left</strong></p>
+                </div>
+                
+                <div class="matching-challenge fade-in" id="matchingChallenge" style="display: none;">
+                    🎉 Your donation will be DOUBLED today only! Every dollar matched up to $5,000.
+                </div>
+
+                <!-- Donation Form -->
+                <div class="donation-form fade-in" id="donationForm" style="display: none;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--neutral-dark);">Your Information</h2>
+                    <form id="donateForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <span class="error-message" id="firstNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <span class="error-message" id="lastNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="address">Billing Address *</label>
+                                <input type="text" id="address" name="address" required>
+                                <span class="error-message" id="addressError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" required>
+                                <span class="error-message" id="cityError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State *</label>
+                                <input type="text" id="state" name="state" required>
+                                <span class="error-message" id="stateError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">ZIP Code *</label>
+                                <input type="text" id="zip" name="zip" required>
+                                <span class="error-message" id="zipError"></span>
+                            </div>
+                        </div>
+
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--neutral-dark);">Payment Method</h3>
+                        <div class="payment-toggle">
+                            <div class="payment-option selected" data-method="card" id="cardOption">
+                                <strong>Credit/Debit Card</strong>
+                            </div>
+                            <div class="payment-option" data-method="paypal" id="paypalOption">
+                                <strong>PayPal</strong>
+                            </div>
+                        </div>
+
+                        <div id="cardDetails">
+                            <div class="form-group full-width">
+                                <label for="cardNumber">Card Number *</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                <span class="error-message" id="cardNumberError"></span>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date *</label>
+                                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+                                    <span class="error-message" id="expiryError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                                    <span class="error-message" id="cvvError"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="recurring" name="recurring">
+                            <label for="recurring">Make this a monthly recurring donation</label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="companyMatch" name="companyMatch">
+                            <label for="companyMatch">My company offers a matching gift program</label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="emailReceipt" name="emailReceipt" checked>
+                            <label for="emailReceipt">Send email receipt</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            Donate <span id="donateAmount">$100</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Column: Impact Showcase -->
+            <div>
+                <div class="impact-showcase fade-in">
+                    <h2>Your Impact</h2>
+                    <div class="impact-stats">
+                        <div class="impact-stat">
+                            <div class="impact-stat-number" id="donorCount">247</div>
+                            <div class="impact-stat-label">Donors This Month</div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-label">
+                            <span>Monthly Goal</span>
+                            <span id="goalProgress">$12,450 / $25,000</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" id="progressFill" style="width: 49.8%;">49.8%</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p class="testimonial-text">
+                            "Thanks to donors like you, I received the one-on-one tutoring that helped me graduate. Now I'm studying at UC Berkeley. Your support changed my life."
+                        </p>
+                        <p class="testimonial-author">— Maria R., City Year Alumna</p>
+                    </div>
+                </div>
+                
+                <!-- Where Your Money Goes -->
+                <div class="money-breakdown fade-in">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--neutral-dark);">Where Your Money Goes</h2>
+                    <div class="breakdown-details">
+                        <div class="breakdown-item" data-percent="82" data-detail="Direct Student Support: Tutoring materials, school supplies, field trips, and one-on-one support programs">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong style="font-size: 1.25rem; color: var(--primary);">82%</strong>
+                                    <p style="margin-top: 0.5rem; font-weight: 600;">Direct Student Support</p>
+                                </div>
+                                <span style="font-size: 2rem;">👥</span>
+                            </div>
+                            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: #6B7280; display: none;" class="breakdown-detail-text">Tutoring materials, school supplies, field trips, and one-on-one support programs</p>
+                        </div>
+                        <div class="breakdown-item" data-percent="10" data-detail="Member Training: Professional development, leadership training, and career preparation for AmeriCorps members">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong style="font-size: 1.25rem; color: var(--accent);">10%</strong>
+                                    <p style="margin-top: 0.5rem; font-weight: 600;">Member Training</p>
+                                </div>
+                                <span style="font-size: 2rem;">🎓</span>
+                            </div>
+                            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: #6B7280; display: none;" class="breakdown-detail-text">Professional development, leadership training, and career preparation for AmeriCorps members</p>
+                        </div>
+                        <div class="breakdown-item" data-percent="8" data-detail="Operations: Administrative costs, technology, and program management to ensure maximum impact">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong style="font-size: 1.25rem; color: var(--secondary);">8%</strong>
+                                    <p style="margin-top: 0.5rem; font-weight: 600;">Operations</p>
+                                </div>
+                                <span style="font-size: 2rem;">⚙️</span>
+                            </div>
+                            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: #6B7280; display: none;" class="breakdown-detail-text">Administrative costs, technology, and program management to ensure maximum impact</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.5rem; text-align: center;">
+                        <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Annual Report →</a>
+                    </p>
+                </div>
+                
+                <!-- Donor Recognition Wall -->
+                <div class="donor-wall fade-in">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--neutral-dark);">Recent Heroes</h2>
+                    <div class="recent-donors" id="recentDonors">
+                        <div class="donor-card">
+                            <div class="donor-name">Sarah K.</div>
+                            <div class="donor-amount">$100</div>
+                            <div class="impact-level supporter">Supporter</div>
+                        </div>
+                        <div class="donor-card">
+                            <div class="donor-name">Michael T.</div>
+                            <div class="donor-amount">$250</div>
+                            <div class="impact-level champion">Champion</div>
+                        </div>
+                        <div class="donor-card">
+                            <div class="donor-name">Jennifer L.</div>
+                            <div class="donor-amount">$50</div>
+                            <div class="impact-level supporter">Supporter</div>
+                        </div>
+                        <div class="donor-card">
+                            <div class="donor-name">David R.</div>
+                            <div class="donor-amount">$500</div>
+                            <div class="impact-level leader">Leader</div>
+                        </div>
+                        <div class="donor-card">
+                            <div class="donor-name">Emma S.</div>
+                            <div class="donor-amount">$100</div>
+                            <div class="impact-level supporter">Supporter</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: var(--neutral-light); border-radius: 0.75rem;">
+                        <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Donate in honor of someone special</label>
+                        <input type="text" placeholder="Enter name (optional)" style="width: 100%; padding: 0.75rem; border: 2px solid #E5E7EB; border-radius: 0.5rem; margin-top: 0.5rem;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enhanced Recurring Donation Section -->
+        <div class="sustaining-member fade-in" id="recurringSection" style="display: none;">
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--neutral-dark);">🌟 Become a Sustaining Member</h3>
+            <p style="margin-bottom: 1rem;">Join our community of monthly donors and make a lasting impact!</p>
+            <div class="cumulative-impact">
+                $25/month = 60 students per year
+            </div>
+            <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                <li style="margin: 0.5rem 0;">✓ Exclusive updates on student progress</li>
+                <li style="margin: 0.5rem 0;">✓ Special recognition in annual report</li>
+                <li style="margin: 0.5rem 0;">✓ Invitation to donor appreciation events</li>
+                <li style="margin: 0.5rem 0;">✓ Track your cumulative impact in your donor dashboard</li>
+            </ul>
+        </div>
+        
+        <!-- Mobile Payment Buttons -->
+        <div class="mobile-payment">
+            <button class="payment-button" style="background: #000; color: white; border: none;">
+                <span style="font-size: 1.25rem;">🍎</span> Apple Pay
+            </button>
+            <button class="payment-button" style="background: #4285F4; color: white; border: none;">
+                <span style="font-size: 1.25rem;">G</span> Google Pay
+            </button>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="trust-section fade-in">
+            <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: var(--neutral-dark);">Your Donation is Secure</h2>
+            <div class="trust-ratings">
+                <div class="rating-badge">
+                    <div class="rating-stars">★★★★★</div>
+                    <p style="font-weight: 600; margin-top: 0.5rem;">GuideStar</p>
+                    <p style="font-size: 0.875rem; color: #6B7280;">Platinum Rating</p>
+                </div>
+                <div class="rating-badge">
+                    <div class="rating-stars">★★★★★</div>
+                    <p style="font-weight: 600; margin-top: 0.5rem;">Charity Navigator</p>
+                    <p style="font-size: 0.875rem; color: #6B7280;">4-Star Rating</p>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">🔒 SSL Secured</div>
+                <div class="trust-badge">501(c)(3) Tax-Exempt</div>
+                <div class="trust-badge">Tax ID: 22-2882549</div>
+            </div>
+            <p>City Year is a US tax-exempt 501(c)(3) nonprofit organization. Your gift is tax-deductible as allowed by law.</p>
+            <p><a href="#" style="color: var(--primary); font-weight: 600;">View our Annual Report →</a></p>
+            <p>Questions? Contact <a href="mailto:donate@cityyear.org">donate@cityyear.org</a></p>
+            <p style="margin-top: 1rem;"><a href="index.html">← Back to Main Site</a></p>
+        </div>
+        
+        <!-- Success Confirmation Modal -->
+        <div class="success-modal" id="successModal">
+            <div class="success-content">
+                <button onclick="closeSuccessModal()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #6B7280;">×</button>
+                <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: var(--primary);">Thank You! 🎉</h2>
+                <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem;">You just changed <span id="successStudentName">Maria's</span> future</p>
+                <div class="certificate">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Certificate of Impact</h3>
+                    <p style="margin-bottom: 0.5rem;">This certifies that</p>
+                    <p style="font-size: 1.5rem; font-weight: 700; margin: 1rem 0;" id="donorName">Your Name</p>
+                    <p style="margin-bottom: 0.5rem;">has made a donation of</p>
+                    <p style="font-size: 2rem; font-weight: 900; color: var(--primary); margin: 1rem 0;" id="certificateAmount">$100</p>
+                    <p style="margin-top: 1rem;">to support City Year Bay Area students</p>
+                </div>
+                <div style="margin: 2rem 0;">
+                    <button onclick="shareCertificate()" style="padding: 1rem 2rem; background: var(--primary); color: white; border: none; border-radius: 0.75rem; font-weight: 700; cursor: pointer; margin-right: 1rem;">Share on Social Media</button>
+                    <button onclick="viewImpact()" style="padding: 1rem 2rem; background: var(--accent); color: white; border: none; border-radius: 0.75rem; font-weight: 700; cursor: pointer;">See Your Impact</button>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.875rem; color: #6B7280;">A confirmation email has been sent to your inbox</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px;">
+                            <circle cx="100" cy="100" r="95" fill="#FFD166" />
+                            <circle cx="100" cy="100" r="85" fill="white" />
+                            <g transform="translate(100, 100)">
+                                <g>
+                                    <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                    <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                    <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                    <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                    <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                                </g>
+                                <g transform="rotate(90)">
+                                    <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                    <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                    <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                    <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                    <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                                </g>
+                                <g transform="rotate(180)">
+                                    <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                    <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                    <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                    <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                    <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                                </g>
+                                <g transform="rotate(270)">
+                                    <path d="M -30,-50 L -15,-35 L -15,-20 L -30,-35 Z" fill="black" />
+                                    <path d="M -15,-35 L 0,-50 L 0,-35 L -15,-20 Z" fill="#FFD166" />
+                                    <path d="M 0,-50 L 15,-35 L 15,-20 L 0,-35 Z" fill="black" />
+                                    <path d="M 15,-35 L 30,-50 L 30,-35 L 15,-20 Z" fill="#FFD166" />
+                                    <path d="M 30,-50 L 30,-35 L 15,-35 L 15,-20 Z" fill="black" />
+                                </g>
+                            </g>
+                            <circle cx="100" cy="100" r="25" fill="#E63946" />
+                        </svg>
+                        <div>
+                            <h4>City Year</h4>
+                            <p style="font-size: 0.875rem; color: #9CA3AF;">Bay Area</p>
+                        </div>
+                    </div>
+                    <p>Supporting students in San José and East Palo Alto</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="https://instagram.com/cityyearsj.sv" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://facebook.com/cityyear" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://twitter.com/cityyear" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html#apply">Apply Now</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="carpool.html">Carpool Program</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Carpool</h4>
+                    <ul>
+                        <li><a href="carpool.html#signup">Join the Network</a></li>
+                        <li><a href="carpool.html#signup">Sign Up</a></li>
+                        <li><a href="carpool.html">Learn More</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support Us</h4>
+                    <p style="margin-bottom: 1rem; font-size: 0.875rem;">
+                        Your donation helps us provide critical support to students in Eastside San José and East Palo Alto.
+                    </p>
+                    <a href="donate.html" style="display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: background 0.3s;">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    <p style="margin-bottom: 0.5rem;">
+                        © 2024 Copyright City Year at 287 Columbus Avenue, Boston, MA 02116
+                    </p>
+                    <p>
+                        <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+                <div>
+                    <div style="background-color: #f3f4f6; border-radius: 0.25rem; padding: 0.375rem 0.5rem; display: inline-block;">
+                        <img src="/AC_State-Logo_CA.png" alt="AmeriCorps California" style="height: 40px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #374151;">
+                <p style="font-size: 0.75rem; line-height: 1.6; text-align: center;">
+                    City Year is available to all, without regard to race, color, origin, gender, political affiliation, 
+                    disability, sexual orientation, or religion. City Year is a US tax-exempt 501(c)(3) nonprofit organization 
+                    (Tax ID Number: 22-2882549). Your gift is tax-deductible as allowed by law.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Donation amount selection
+        let selectedAmount = 100;
+        const amountButtons = document.querySelectorAll('.amount-btn');
+        const customInput = document.getElementById('customInput');
+        const customAmount = document.getElementById('customAmount');
+        const customBtn = document.getElementById('customBtn');
+        const impactMessage = document.getElementById('impactMessage');
+        const donationForm = document.getElementById('donationForm');
+        const donateAmount = document.getElementById('donateAmount');
+
+        amountButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                amountButtons.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                if (this.dataset.amount === 'custom') {
+                    customAmount.style.display = 'block';
+                    customInput.focus();
+                    selectedAmount = null;
+                    document.getElementById('amountVisual').innerHTML = '<p style="font-weight: 600; text-align: center; padding: 2rem;">Tell us your impact goal</p>';
+                } else {
+                    customAmount.style.display = 'none';
+                    selectedAmount = parseInt(this.dataset.amount);
+                    impactMessage.innerHTML = `<strong>$${selectedAmount} = </strong>${this.dataset.impact}`;
+                    donateAmount.textContent = `$${selectedAmount}`;
+                    updateAmountVisual(selectedAmount);
+                    updateURL();
+                    showForm();
+                }
+            });
+        });
+
+        customInput.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            if (value && value > 0) {
+                selectedAmount = value;
+                impactMessage.innerHTML = `<strong>$${value} = </strong>Making a direct impact on Bay Area students`;
+                donateAmount.textContent = `$${value}`;
+                updateURL();
+                showForm();
+            }
+        });
+
+        function updateURL() {
+            if (selectedAmount) {
+                const url = new URL(window.location);
+                url.searchParams.set('amount', selectedAmount);
+                window.history.replaceState({}, '', url);
+            }
+        }
+
+        function showForm() {
+            if (selectedAmount) {
+                donationForm.style.display = 'block';
+                donationForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                updateProgress(2);
+                updateImpactVisualization(selectedAmount);
+            }
+        }
+
+        // Check URL for amount parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlAmount = urlParams.get('amount');
+        if (urlAmount) {
+            const amount = parseInt(urlAmount);
+            if (amount) {
+                const btn = Array.from(amountButtons).find(b => parseInt(b.dataset.amount) === amount);
+                if (btn) {
+                    btn.click();
+                } else {
+                    customBtn.click();
+                    customInput.value = amount;
+                    customInput.dispatchEvent(new Event('input'));
+                }
+            }
+        }
+
+        // Payment method toggle
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const cardDetails = document.getElementById('cardDetails');
+        
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                paymentOptions.forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                if (this.dataset.method === 'paypal') {
+                    cardDetails.style.display = 'none';
+                    document.getElementById('cardNumber').required = false;
+                    document.getElementById('expiry').required = false;
+                    document.getElementById('cvv').required = false;
+                } else {
+                    cardDetails.style.display = 'block';
+                    document.getElementById('cardNumber').required = true;
+                    document.getElementById('expiry').required = true;
+                    document.getElementById('cvv').required = true;
+                }
+            });
+        });
+
+        // Form validation
+        const form = document.getElementById('donateForm');
+        const inputs = form.querySelectorAll('input[required]');
+
+        function validateField(field) {
+            const errorElement = document.getElementById(field.id + 'Error');
+            let isValid = true;
+
+            if (field.hasAttribute('required') && !field.value.trim()) {
+                errorElement.textContent = 'This field is required';
+                field.classList.add('error');
+                isValid = false;
+            } else if (field.type === 'email' && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+                errorElement.textContent = 'Please enter a valid email';
+                field.classList.add('error');
+                isValid = false;
+            } else if (field.id === 'cardNumber' && field.value) {
+                const cardNumber = field.value.replace(/\s/g, '');
+                if (!/^\d{13,19}$/.test(cardNumber)) {
+                    errorElement.textContent = 'Please enter a valid card number';
+                    field.classList.add('error');
+                    isValid = false;
+                }
+            } else if (field.id === 'expiry' && field.value) {
+                if (!/^\d{2}\/\d{2}$/.test(field.value)) {
+                    errorElement.textContent = 'Please enter MM/YY format';
+                    field.classList.add('error');
+                    isValid = false;
+                }
+            } else if (field.id === 'cvv' && field.value) {
+                if (!/^\d{3,4}$/.test(field.value)) {
+                    errorElement.textContent = 'Please enter a valid CVV';
+                    field.classList.add('error');
+                    isValid = false;
+                }
+            } else {
+                errorElement.textContent = '';
+                field.classList.remove('error');
+            }
+
+            return isValid;
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => validateField(input));
+            input.addEventListener('input', () => {
+                if (input.classList.contains('error')) {
+                    validateField(input);
+                }
+            });
+        });
+
+        // Format card number
+        document.getElementById('cardNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+        });
+
+        // Format expiry date
+        document.getElementById('expiry').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+
+        // Progress indicator
+        function updateProgress(step) {
+            for (let i = 1; i <= 4; i++) {
+                const stepEl = document.getElementById(`step${i}`);
+                if (i < step) {
+                    stepEl.classList.remove('active', 'inactive');
+                    stepEl.classList.add('completed');
+                } else if (i === step) {
+                    stepEl.classList.remove('completed', 'inactive');
+                    stepEl.classList.add('active');
+                } else {
+                    stepEl.classList.remove('active', 'completed');
+                    stepEl.classList.add('inactive');
+                }
+            }
+        }
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+
+            if (!selectedAmount) {
+                alert('Please select a donation amount');
+                isValid = false;
+            }
+
+            if (isValid) {
+                updateProgress(3);
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Processing...';
+
+                // Simulate payment processing
+                setTimeout(() => {
+                    updateProgress(4);
+                    window.location.href = `donate.html?success=true&amount=${selectedAmount}`;
+                }, 2000);
+            }
+        });
+
+        // Check for success parameter
+        const success = urlParams.get('success');
+        if (success === 'true') {
+            const amount = urlParams.get('amount');
+            alert(`Thank you for your donation of $${amount}! You will receive a confirmation email shortly.`);
+        }
+
+        // Animate donor count
+        function animateCounter(elementId, target) {
+            const element = document.getElementById(elementId);
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 30);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    if (entry.target.id === 'donorCount') {
+                        animateCounter('donorCount', 247);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Rotating student names and photos
+        const students = [
+            { name: 'Maria', photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop' },
+            { name: 'Jose', photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop' },
+            { name: 'Sofia', photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop' },
+            { name: 'Carlos', photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop' },
+            { name: 'Ana', photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop' }
+        ];
+        
+        let currentStudentIndex = 0;
+        function rotateStudent() {
+            const student = students[currentStudentIndex];
+            document.getElementById('studentName').textContent = student.name;
+            document.getElementById('rotatingStudentName').textContent = student.name + ' R.';
+            document.getElementById('rotatingStudentPhoto').src = student.photo;
+            currentStudentIndex = (currentStudentIndex + 1) % students.length;
+        }
+        
+        setInterval(rotateStudent, 4000);
+        
+        // Animate live student count
+        function animateStudentCount() {
+            const target = 1200;
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    document.getElementById('liveStudentCount').textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    document.getElementById('liveStudentCount').textContent = Math.floor(current).toLocaleString();
+                }
+            }, 20);
+        }
+        animateStudentCount();
+        
+        // Visual impact for each amount
+        const amountVisuals = {
+            25: {
+                type: 'faces',
+                content: '<div class="student-faces"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" class="student-face"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" class="student-face"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" class="student-face"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" class="student-face"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" class="student-face"></div><p style="margin-top: 1rem; font-weight: 600;">Supplies for these 5 students</p>'
+            },
+            50: {
+                type: 'books',
+                content: '<div class="books-animation" id="booksAnimation"></div><p style="margin-top: 1rem; font-weight: 600;">One week of learning materials</p>'
+            },
+            100: {
+                type: 'member',
+                content: '<div class="member-photo-container"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="City Year Member" class="member-photo"><p style="margin-top: 1rem; font-weight: 600;">Professional training for <span>Sarah M.</span></p></div>'
+            },
+            250: {
+                type: 'classroom',
+                content: '<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop" alt="Classroom" class="classroom-scene"><p style="margin-top: 1rem; font-weight: 600;">Transform an entire classroom</p>'
+            },
+            500: {
+                type: 'video',
+                content: '<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1rem;"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop" alt="Success Story" style="width: 100%; height: 100%; object-fit: cover;"><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); border-radius: 1rem;"><span style="font-size: 4rem; color: white;">▶</span></div></div><p style="margin-top: 1rem; font-weight: 600;">Launch a career like Marcus did</p>'
+            }
+        };
+        
+        function updateAmountVisual(amount) {
+            const visualContainer = document.getElementById('amountVisual');
+            if (amountVisuals[amount]) {
+                visualContainer.innerHTML = amountVisuals[amount].content;
+                
+                // Animate books if $50
+                if (amount === 50) {
+                    setTimeout(() => {
+                        const booksContainer = document.getElementById('booksAnimation');
+                        for (let i = 0; i < 5; i++) {
+                            const book = document.createElement('div');
+                            book.className = 'book';
+                            book.style.animationDelay = `${i * 0.1}s`;
+                            booksContainer.appendChild(book);
+                        }
+                    }, 100);
+                }
+            } else {
+                visualContainer.innerHTML = '<p style="font-weight: 600; text-align: center; padding: 2rem;">Tell us your impact goal</p>';
+            }
+        }
+        
+        // Update amount selection to show visual
+        amountButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.dataset.amount !== 'custom') {
+                    updateAmountVisual(parseInt(this.dataset.amount));
+                }
+            });
+        });
+        
+        // Real-time impact calculation
+        function updateImpactVisualization(amount) {
+            if (!amount) return;
+            
+            const impactViz = document.getElementById('impactVisualization');
+            const studentsImpacted = Math.floor(amount / 20); // Rough calculation
+            document.getElementById('studentsImpacted').textContent = studentsImpacted;
+            impactViz.style.display = 'block';
+            
+            // Update next donor number
+            const nextNumber = 248;
+            document.getElementById('nextDonorNumber').textContent = nextNumber;
+            
+            // Update progress bar with new contribution
+            const currentProgress = 12450;
+            const newTotal = currentProgress + amount;
+            const goal = 25000;
+            const percentage = Math.min((newTotal / goal) * 100, 100);
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressFill').textContent = percentage.toFixed(1) + '%';
+            document.getElementById('goalProgress').textContent = `$${newTotal.toLocaleString()} / $${goal.toLocaleString()}`;
+        }
+        
+        // Update custom input to show visual
+        const originalCustomInput = customInput.oninput;
+        customInput.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            if (value && value > 0) {
+                updateAmountVisual(value);
+                updateImpactVisualization(value);
+            }
+        });
+        
+        // Breakdown item interactions
+        document.querySelectorAll('.breakdown-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const detailText = this.querySelector('.breakdown-detail-text');
+                const isVisible = detailText.style.display !== 'none';
+                
+                // Close all others
+                document.querySelectorAll('.breakdown-detail-text').forEach(text => {
+                    text.style.display = 'none';
+                });
+                
+                // Toggle this one
+                detailText.style.display = isVisible ? 'none' : 'block';
+            });
+        });
+        
+        // Recurring donation toggle
+        document.getElementById('recurring').addEventListener('change', function() {
+            const recurringSection = document.getElementById('recurringSection');
+            if (this.checked) {
+                recurringSection.style.display = 'block';
+                const monthlyAmount = selectedAmount || 25;
+                document.querySelector('.cumulative-impact').textContent = `$${monthlyAmount}/month = ${monthlyAmount * 2.4} students per year`;
+            } else {
+                recurringSection.style.display = 'none';
+            }
+        });
+        
+        // Matching challenge (show randomly)
+        if (Math.random() > 0.5) {
+            document.getElementById('matchingChallenge').style.display = 'block';
+        }
+        
+        // Success modal functions
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
+        
+        function shareCertificate() {
+            const text = `I just donated to City Year Bay Area! Join me in supporting 1,200+ students.`;
+            if (navigator.share) {
+                navigator.share({ text, url: window.location.href });
+            } else {
+                navigator.clipboard.writeText(text + ' ' + window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        }
+        
+        function viewImpact() {
+            window.location.href = 'index.html#stories';
+        }
+        
+        // Update form submission to show success modal
+        const originalFormSubmit = form.onsubmit;
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+
+            if (!selectedAmount) {
+                alert('Please select a donation amount');
+                isValid = false;
+            }
+
+            if (isValid) {
+                updateProgress(3);
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Processing...';
+
+                // Simulate payment processing
+                setTimeout(() => {
+                    updateProgress(4);
+                    const firstName = document.getElementById('firstName').value;
+                    const amount = selectedAmount;
+                    
+                    // Update success modal
+                    document.getElementById('donorName').textContent = firstName || 'You';
+                    document.getElementById('certificateAmount').textContent = `$${amount}`;
+                    document.getElementById('successStudentName').textContent = students[currentStudentIndex].name;
+                    
+                    // Show success modal
+                    document.getElementById('successModal').classList.add('active');
+                    
+                    // Add to recent donors
+                    const recentDonors = document.getElementById('recentDonors');
+                    const newDonor = document.createElement('div');
+                    newDonor.className = 'donor-card';
+                    const level = amount >= 500 ? 'leader' : amount >= 250 ? 'champion' : 'supporter';
+                    newDonor.innerHTML = `
+                        <div class="donor-name">${firstName} ${document.getElementById('lastName').value.charAt(0)}.</div>
+                        <div class="donor-amount">$${amount}</div>
+                        <div class="impact-level ${level}">${level.charAt(0).toUpperCase() + level.slice(1)}</div>
+                    `;
+                    recentDonors.insertBefore(newDonor, recentDonors.firstChild);
+                    
+                    // Update donor count
+                    const currentCount = parseInt(document.getElementById('donorCountHero').textContent);
+                    document.getElementById('donorCountHero').textContent = currentCount + 1;
+                    document.getElementById('donorCount').textContent = currentCount + 1;
+                }, 2000);
+            }
+        });
+        
+        // Check for success parameter and show modal
+        if (success === 'true') {
+            const amount = urlParams.get('amount');
+            setTimeout(() => {
+                document.getElementById('successModal').classList.add('active');
+                document.getElementById('certificateAmount').textContent = `$${amount}`;
+            }, 500);
+        }
+        
+        // Initialize with $100 visual
+        updateAmountVisual(100);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Yellow Ring -->
+  <circle cx="100" cy="100" r="95" fill="#FFD166" />
+  
+  <!-- White Background -->
+  <circle cx="100" cy="100" r="85" fill="white" />
+  
+  <!-- Simplified Star Pattern - 8 points for better visibility at small sizes -->
+  <g transform="translate(100, 100)">
+    <!-- Top point -->
+    <path d="M 0,-60 L 8,-45 L 20,-50 L 10,-35 L 20,-20 L 0,-30 L -20,-20 L -10,-35 L -20,-50 L -8,-45 Z" fill="black" />
+    
+    <!-- Right point -->
+    <path d="M 60,0 L 45,8 L 50,20 L 35,10 L 20,20 L 30,0 L 20,-20 L 35,-10 L 50,-20 L 45,-8 Z" fill="black" />
+    
+    <!-- Bottom point -->
+    <path d="M 0,60 L -8,45 L -20,50 L -10,35 L -20,20 L 0,30 L 20,20 L 10,35 L 20,50 L 8,45 Z" fill="black" />
+    
+    <!-- Left point -->
+    <path d="M -60,0 L -45,-8 L -50,-20 L -35,-10 L -20,-20 L -30,0 L -20,20 L -35,10 L -50,20 L -45,8 Z" fill="black" />
+  </g>
+  
+  <!-- Central Red Circle -->
+  <circle cx="100" cy="100" r="30" fill="#E63946" />
+  
+  <!-- Simplified "CY" text for small sizes -->
+  <text 
+    x="100" 
+    y="110" 
+    textAnchor="middle" 
+    fill="white" 
+    fontSize="24" 
+    fontWeight="bold" 
+    fontFamily="Arial, sans-serif"
+  >
+    CY
+  </text>
+</svg>
+
