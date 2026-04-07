@@ -1,4 +1,4 @@
-# City Year Bay Area Website
+# Braven Team 04, Revamped City Year Bay Area MVP Website
 
 A modern, clean website prototype for [City Year Bay Area](https://www.cityyear.org/bay-area/) recruitment, built with React and Tailwind CSS.
 
