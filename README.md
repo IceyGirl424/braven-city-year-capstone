@@ -1,6 +1,6 @@
 # City Year Bay Area Website
 
-A modern, clean website prototype for City Year Bay Area recruitment, built with React and Tailwind CSS.
+A modern, clean website prototype for [City Year Bay Area](https://www.cityyear.org/bay-area/) recruitment, built with React and Tailwind CSS.
 
 ## Demo
 
