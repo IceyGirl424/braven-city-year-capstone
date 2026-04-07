@@ -4,9 +4,8 @@ A modern, clean website prototype for City Year Bay Area recruitment, built with
 
 ## Demo
 
-[![City Year Bay Area — demo](https://github.com/user-attachments/assets/00000000-0000-0000-0000-000000000001)](https://github.com/user-attachments/assets/00000000-0000-0000-0000-000000000002)
+[![Demo Video](<img width="1299" height="497" alt="Screenshot 2025-10-04 at 11 50 37 PM" src="https://github.com/user-attachments/assets/a7c6c71c-3d22-441e-bbae-eb31a9f3b254" />)](https://github.com/user-attachments/assets/a7c6c71c-3d22-441e-bbae-eb31a9f3b254)
 
-*Upload a **thumbnail** and your demo **MP4** (e.g. [`assets/braven-final-demo.mp4`](assets/braven-final-demo.mp4)) in an **issue or PR comment** on this repo, copy both `https://github.com/user-attachments/assets/...` URLs GitHub provides, and replace the two placeholder links above.*
 
 ## Features
 
