@@ -4,11 +4,9 @@ A modern, clean website prototype for City Year Bay Area recruitment, built with
 
 ## Demo
 
-GitHub’s README can’t embed a video player (links to `.mp4` files download or open as a file). This repo includes a **demo page** with a normal embedded player — press play in the page; nothing downloads.
+[![City Year Bay Area — demo](https://github.com/user-attachments/assets/00000000-0000-0000-0000-000000000001)](https://github.com/user-attachments/assets/00000000-0000-0000-0000-000000000002)
 
-**[Open demo (play in browser) →](https://iceygirl424.github.io/braven-city-year-capstone/demo.html)**
-
-*First time:* enable **GitHub Pages** on this repo — **Settings → Pages → Build and deployment → Branch `main`, folder `/docs` → Save.** Wait ~1 minute, then use the link above.
+*Upload a **thumbnail** and your demo **MP4** (e.g. [`assets/braven-final-demo.mp4`](assets/braven-final-demo.mp4)) in an **issue or PR comment** on this repo, copy both `https://github.com/user-attachments/assets/...` URLs GitHub provides, and replace the two placeholder links above.*
 
 ## Features
 
