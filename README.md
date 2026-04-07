@@ -17,6 +17,31 @@ A modern, clean website prototype for City Year Bay Area recruitment, built with
 - **Video Testimonials**: Placeholder sections for current member and alumni stories
 - **Fully Responsive**: Works beautifully on desktop, tablet, and mobile devices
 
+## Challenge (Capstone Context)
+
+City Year Bay Area’s recruitment experience needs to do more than “explain the program” — it needs to quickly help a prospective applicant answer:
+
+- **Is this financially realistic in the Bay Area?**
+- **What does day-to-day service actually look like?**
+- **What impact will I have, and what support will I get?**
+- **What’s the next step I can take right now?**
+
+## Product Summary
+
+This project is a **modern recruitment website prototype** designed to reduce uncertainty and increase conversion by combining:
+
+- **Clear, skimmable messaging** for first-time visitors
+- **Interactive tools** that make benefits, schedule, and trade-offs concrete
+- **Impact-forward storytelling** that connects service to real outcomes
+
+## How It Drives Impact
+
+- **Reduces financial ambiguity**: tools that translate stipends/benefits into “real numbers” help candidates self-qualify faster.
+- **Builds trust through transparency**: details on benefits, support, and expectations shift the tone from “marketing” to “clarity.”
+- **Creates low-friction entry points**: short-shift / event-style CTAs and simple pathways to apply make commitment feel achievable.
+- **Makes service feel tangible**: day-in-the-life + impact visuals help visitors picture themselves in the role.
+- **Supports mobile-first recruiting**: designed to work cleanly on phones where many candidates first discover programs.
+
 ## Getting Started
 
 ### Prerequisites
@@ -46,6 +71,14 @@ npm run build
 
 The built files will be in the `dist` directory.
 
+### Preview the Production Build
+
+```bash
+npm run preview
+```
+
+Vite will print a local URL (commonly `http://localhost:4173`).
+
 ## Project Structure
 
 ```
@@ -54,11 +87,16 @@ The built files will be in the `dist` directory.
 │   │   ├── Navbar.jsx          # Navigation bar with smooth scrolling
 │   │   ├── Hero.jsx            # Hero section with main CTA
 │   │   ├── DonationSection.jsx # Donation interface
-│   │   ├── PerksSection.jsx    # Benefits and partner information
 │   │   ├── CalendarSection.jsx # Interactive shift signup calendar
 │   │   ├── VideosSection.jsx   # Video testimonial placeholders
 │   │   ├── ApplySection.jsx    # Application CTA
 │   │   └── Footer.jsx          # Footer with links and info
+│   │   ├── brand/              # Brand storytelling + interactive tools
+│   │   ├── impact/             # Impact dashboards/visualizations
+│   │   ├── calculators/        # Financial/benefits calculators
+│   │   ├── alumni/             # Alumni content + tracking
+│   │   ├── faq/                # FAQ components
+│   │   └── hero/               # Hero carousel + stat ticker
 │   ├── App.jsx                 # Main app component
 │   ├── main.jsx                # React entry point
 │   └── index.css               # Tailwind CSS imports
@@ -85,6 +123,19 @@ The built files will be in the `dist` directory.
 4. **Visual Hierarchy**: Better spacing, typography, and visual flow
 5. **Mobile-First**: Fully responsive design that works on all devices
 
+## What’s Included (Highlights)
+
+- **Brand / “Real Numbers” storytelling**: interactive and narrative components that make benefits and expectations concrete.
+- **Impact visualization**: components that show outcomes and reinforce purpose.
+- **Recruitment funnel sections**: hero → mission → perks → calendar/events → apply/contact.
+
+## Next Enhancements (If Productized)
+
+- **Real analytics**: track CTA clicks, scroll depth, and drop-off points.
+- **CMS-backed content**: allow non-engineers to update alumni stories, FAQs, and events.
+- **Donation/payment**: wire donation flows to Stripe/PayPal with secure server-side processing.
+- **Accessibility pass**: keyboard navigation, reduced motion toggles, and content contrast verification.
+
 ## Customization
 
 ### Adding Real Video Content
@@ -101,6 +152,11 @@ Connect the donation buttons in `DonationSection.jsx` to your payment processor 
 - **React 18**: Modern React with hooks
 - **Tailwind CSS**: Utility-first CSS framework
 - **Vite**: Fast build tool and dev server
+
+## Deployment Notes
+
+- **Static hosting friendly**: `npm run build` outputs to `dist/` and can be deployed to Netlify, Vercel, or GitHub Pages.
+- **Single-page routing**: if you add routes later, configure your host to serve `index.html` for unknown paths.
 
 ## License
 
