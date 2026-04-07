@@ -4,11 +4,9 @@ A modern, clean website prototype for City Year Bay Area recruitment, built with
 
 ## Demo
 
-<video src="https://raw.githubusercontent.com/IceyGirl424/braven-city-year-capstone/main/assets/braven-final-demo.mp4" controls width="100%">
-  <a href="https://github.com/IceyGirl424/braven-city-year-capstone/blob/main/assets/braven-final-demo.mp4">Watch the demo video on GitHub</a>
-</video>
+[![Demo Video](https://github.com/user-attachments/assets/f3f1b796-7df0-4382-a8cd-7e16c4ea0f5f)](https://github.com/user-attachments/assets/ddfe55b4-a81d-425d-a5c3-8c8bc5549c60)
 
-**[Watch the demo on GitHub](https://github.com/IceyGirl424/braven-city-year-capstone/blob/main/assets/braven-final-demo.mp4)** (in-browser player) if the embed doesn’t show.
+*Click the image to open the demo video (hosted on GitHub).*
 
 ## Features
 
