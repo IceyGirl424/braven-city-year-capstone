@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+# HQ demo backup only on your machine (avoid pushing a large MP4 again)
+assets/braven-final-demo.backup-9mb.mp4
+
