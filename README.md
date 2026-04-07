@@ -2,6 +2,12 @@
 
 A modern, clean website prototype for City Year Bay Area recruitment, built with React and Tailwind CSS.
 
+## Demo
+
+<video src="assets/braven-final-demo.mp4" controls width="100%">
+  Your browser does not support the video tag. <a href="assets/braven-final-demo.mp4">Download the demo video</a>.
+</video>
+
 ## Features
 
 - **Clean, Modern Design**: Simplified color palette with uplifting, professional aesthetics
